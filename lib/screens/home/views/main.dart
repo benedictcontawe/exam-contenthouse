@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_exam/app_localizations.dart';
 import 'package:mobile_exam/core/app/view.dart' as base;
 
 import '../bloc.dart';
@@ -11,12 +12,12 @@ class ViewState extends base.ViewState {
       child: ListView(
         children: [
           Text(
-            context.strings.homeDescriptionTitle,
+            AppLocalizations.of(context).translate("homeDescriptionTitle"),
             style: context.texts.displaySmall,
           ),
           const SizedBox(height: 40),
           Text(
-            context.strings.homeDescriptionBody,
+            AppLocalizations.of(context).translate("homeDescriptionBody"),
             style: context.texts.bodyMedium,
           ),
           const SizedBox(height: 40),
@@ -27,21 +28,23 @@ class ViewState extends base.ViewState {
                 onPressed: () {
                   Navigator.pushNamed(context, "/hint_1");
                 },
-                child: Text(context.strings.homeHint1ButtonLabel),
+                child: Text(AppLocalizations.of(context).translate("homeHint1ButtonLabel")),
               ),
               ElevatedButton(
                 onPressed: () async {
                   Navigator.pushNamed(
                     context,
                     "/hint_2",
-                    // arguments: {"key": await context.bloc.serverKey},
+                    arguments: {"key": await context.bloc.serverKey},
                   );
                 },
-                child: Text(context.strings.homeHint2ButtonLabel),
+                child: Text(AppLocalizations.of(context).translate("homeHint2ButtonLabel")),
               ),
               ElevatedButton(
-                onPressed: () {},
-                child: Text(context.strings.homeExamButtonLabel),
+                onPressed: () {
+                  Navigator.pushNamed(context, "/exam");
+                },
+                child: Text(AppLocalizations.of(context).translate("homeExamButtonLabel")),
               )
             ],
           ),

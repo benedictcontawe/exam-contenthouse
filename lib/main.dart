@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+//import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:mobile_exam/app_localizations.dart';
 import 'package:provider/provider.dart';
 
 import 'package:mobile_exam/core/extensions/common.dart';
@@ -24,7 +25,7 @@ class App extends StatelessWidget {
       builder: (context, _) {
         return MaterialApp(
           // app title
-          onGenerateTitle: (context) => context.strings.appTitle,
+          onGenerateTitle: (context) => AppLocalizations.of(context).translate("appTitle"),
 
           // backgrounding
           restorationScopeId: 'app', // restore Navigator for backgrounding
