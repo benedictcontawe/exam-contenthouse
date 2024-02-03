@@ -18,7 +18,7 @@ class _ScreenState extends State<Screen> {
   @override
   void dispose() {
     _bloc?.close().then((b) => b.dispose());
-    _bloc = null; // remove reference
+    _bloc = null; 
     super.dispose();
   }
 
@@ -33,7 +33,7 @@ class _ScreenState extends State<Screen> {
           },
           child: Scaffold(
             appBar: AppBar(
-              title: Text(AppLocalizations.of(context).translate("hint1AppbarTitle")),
+              title: Text(AppLocalizations.of(context).translate("examAppbarTitle")),
             ),
             body: SafeArea(
               child: base.BlocBuilder<Bloc, view.ViewState>(

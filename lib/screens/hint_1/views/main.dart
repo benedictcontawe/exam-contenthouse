@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_exam/app_localizations.dart';
 import 'package:mobile_exam/core/app/view.dart' as base;
 
 class ViewState extends base.ViewState {
@@ -9,7 +10,7 @@ class ViewState extends base.ViewState {
       child: ListView(
         children: [
           const SizedBox(height: 20),
-          Text(context.strings.hint1Description),
+          Text(AppLocalizations.of(context).translate("hint1Description")),
         ],
       ),
     );

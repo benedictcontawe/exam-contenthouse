@@ -23,7 +23,6 @@ class Bloc extends base.Bloc {
     final arg = context.arguments;
     final key = arg?.tryGet("key");
     final service = context.server;
-
     if (key != await service.accessKey) {
       emit(error_view.ViewState());
       return;

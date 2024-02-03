@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart' as base;
+import 'package:mobile_exam/app_localizations.dart';
 import 'package:mobile_exam/core/app/view.dart' as view;
 
 import 'bloc.dart';
@@ -32,7 +33,7 @@ class _ScreenState extends State<Screen> {
           },
           child: Scaffold(
             appBar: AppBar(
-              title: Text(context.strings.hint2AppbarTitle),
+              title: Text(AppLocalizations.of(context).translate("hint2AppbarTitle")),
             ),
             body: SafeArea(
               child: base.BlocBuilder<Bloc, view.ViewState>(
